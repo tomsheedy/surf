@@ -1,7 +1,360 @@
 <!DOCTYPE html>
 <html>
+
 <body>
-<h1>Hello World!!!!</h1>
-<p>I'm hosted with GitHub Pages.</p>
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+  <style type="text/css">
+    .container {
+      width: 100%;
+      display: block;
+    }
+    body {margin: 0}
+    .middle {
+      width: 60vw;
+      min-width: 60vw;
+      max-width: 60vw;
+      display: inline-block;
+      margin: auto;
+      padding-left: 20vw;
+      padding-right: 20vw
+    }
+
+    .title {
+      width: 100%;
+      text-align: center;
+      font-family: sans-serif;
+      text-transform: uppercase;
+      font-weight: 200;
+      font-style: italic;
+      font-size: 3em;
+    }
+
+    .menu .submenu .menuitem .submenuitem {
+      width: 100%;
+      text-align: center;
+      font-family: serif;
+      text-transform: lowercase;
+    }
+
+
+
+    a {
+      text-decoration: none;
+      color: black;
+      cursor: pointer;
+      cursor: hand;
+    }
+
+    span.menu, span.submenu, span.menuitem, span.submenuitem {
+      color: black;
+      cursor: pointer;
+      cursor: hand;
+    }
+
+    .menucenter {
+      width: 96%;
+      align-content: center;
+      align-items: center;
+      align-self: center;
+      text-align: center;
+      padding: 2%;
+    }
+
+    .content {
+      min-height: 65vh;
+      padding: 5px;
+      border-bottom: 1px black solid;
+        padding-top: 25vh;
+    }
+
+    .top {
+      min-height: 25vh;
+        max-height: 25vh;
+        width: 100vw;
+        min-width: 100vw;
+        max-width: 100vw;
+      display: block;
+      position: fixed;
+      top: 0;
+      background: rgba(255, 255, 255, 0.9);
+      <!--border: 1px black solid;-->
+    }
+
+    .contents {
+      position: static;
+    }
+
+    body,
+    html {
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+  </style>
+
+
+
+  <div class="container">
+      <div class="top">
+        <h1 class="title">Carve Surf Morocco</h1>
+        <div class="menucenter">
+          <div id="menu">
+          </div>
+          <div id="submenu" style="min-height:20px">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="container">
+
+    <div class="sides">
+    </div>
+
+
+
+    <div class="middle contents" style="margin-bottom:40vh;">
+
+      <div class='content' id='home'>home</div>
+      <div class='content' id='beginner'>beginner</div>
+      <div class='content' id='intermediate'>intermediate</div>
+      <div class='content' id='guiding'>guiding</div>
+      <div class='content' id='bandb'>bandb</div>
+      <div class='content' id='yoga'>yoga</div>
+      <div class='content' id='bookingandcontact'>
+
+        <form action="https://formspree.io/tom@sheedy.me" method="POST">
+          <input type="text" name="name">
+          <input type="email" name="_replyto">
+          <input type="hidden" name="_subject" value="Formspree test" />
+          <!--input type="hidden" name="_next" value="//site.io/thanks.html" /-->
+          <input type="submit" value="Send">
+        </form>
+
+      </div>
+      <div class='content' id='gallery'>gallery</div>
+      <div class='content' id='video'>video</div>
+      <div class='content' id='blog'>blog</div>
+      <div class='content' id='accomodation'>accomodation</div>
+      <div class='content' id='surfschool'>surfschool</div>
+      <div class='content' id='surfspotguide'>surfspotguide</div>
+      <div class='content' id='gettinghere'>gettinghere</div>
+      <div class='content' id='otherlocalactivities'>otherlocalactivities</div>
+      <div class='content' id='carhire'>carhire</div>
+      <div class='content' id='faqs'>faqs</div>
+
+    </div>
+
+
+
+
+    <div class="sides">
+    </div>
+
+
+
+  </div>
+
 </body>
+
+
+
+
+<script type="text/javascript">
+  var nav = [
+
+
+    {
+      "title": "home",
+      "alias": "home",
+      "submenu": [],
+      "url": ""
+    },
+
+
+    {
+      "title": "packages",
+      "alias": "packages",
+      "submenu": [{
+        "title": "surf lessons beginner",
+        "alias": "beginner",
+        "url": ""
+      }, {
+        "title": "surf lessons intermediate",
+        "alias": "intermediate",
+        "url": ""
+      }, {
+        "title": "surf guiding",
+        "alias": "guiding",
+        "url": ""
+      }, {
+        "title": "b&b independent surf travel",
+        "alias": "bandb",
+        "url": ""
+      }, {
+        "title": "surf with yoga",
+        "alias": "yoga",
+        "url": ""
+      }]
+    },
+
+
+    {
+      "title": "booking & contact",
+      "alias": "bookingandcontact",
+      "submenu": [],
+      "url": ""
+    },
+
+
+    {
+      "title": "media",
+      "alias": "media",
+      "submenu": [{
+        "title": "gallery",
+        "alias": "gallery",
+        "url": "http://www.flickr.com"
+      }, {
+        "title": "video",
+        "alias": "video",
+        "url": "http://www.vimeo.com"
+      }, {
+        "title": "blog",
+        "alias": "blog",
+        "url": "http://www.tumblr.com"
+      }]
+    },
+
+
+    {
+      "title": "about us",
+      "alias": "aboutus",
+      "submenu": [{
+        "title": "accomodation",
+        "alias": "accomodation",
+        "url": ""
+      }, {
+        "title": "surf school",
+        "alias": "surfschool",
+        "url": ""
+      }]
+    },
+
+
+    {
+      "title": "travel",
+      "alias": "travel",
+      "submenu": [{
+        "title": "surf spot guide",
+        "alias": "surfspotguide",
+        "url": ""
+      }, {
+        "title": "getting here",
+        "alias": "gettinghere",
+        "url": ""
+      }, {
+        "title": "other local activities",
+        "alias": "otherlocalactivities",
+        "url": ""
+      }, {
+        "title": "car hire",
+        "alias": "carhire",
+        "url": ""
+      }, {
+        "title": "faqs",
+        "alias": "faqs",
+        "url": ""
+      }]
+    }
+
+
+
+
+  ];
+
+
+  document.onload = load()
+
+  function load() {
+    buildMenu();
+    hideAllMenus();
+  }
+
+  function buildMenu() {
+    var menu = []
+    var submenu = []
+    var sep = '<span class="sep"> / </span>'
+    $.each(nav, function(i, val) {
+      var subs = []
+      var nosubs = 0;
+      $.each(val.submenu, function(j, sub) {
+        nosubs = nosubs + 1
+      });
+      if (nosubs > 0) {
+        var item = '<span class="menuitem" data-menu="' + val.alias + '" >' + val.title + '</span>'
+      } else {
+        if (val.url == '') {
+          var item = '<a class="menuitem" data-menu="' + val.alias + '" href="#' + val.alias + '">' + val.title + '</a>'
+        } else {
+          var item = '<a class="menuitem" data-menu="' + val.alias + '" href="' + val.url + '">' + val.title + '</a>'
+        }
+      }
+      menu.push(item)
+      $.each(val.submenu, function(j, sub) {
+        if (sub.url == '') {
+          var subitem = '<a class="submenuitem" href="#' + sub.alias + '" id="smi' + sub.alias + '" >' + sub.title + '</a>'
+        } else {
+          var subitem = '<a class="submenuitem" href="' + sub.url + '">' + sub.title + '</a>'
+        }
+        subs.push(subitem);
+      });
+      var submenuitem = '<span class="submenu" data-submenu="' + val.alias + '" id="submenu' + val.alias + '">' + subs.join(sep) + '</span>'
+      submenu.push(submenuitem)
+    });
+    $("#menu").append(menu.join(sep))
+    $("#submenu").append(submenu)
+  }
+
+  function hideAllMenus() {
+    //alert('kdfmnb')
+    $.each(nav, function(i, val) {
+      //FIND SUBMENU WITH DATA-SUBMENU = VAL.ALIAS, AND HIDE IT
+      hideMenu(val.alias,0)
+        //alert('hid ' + val.alias + ' @ ' + id)
+    });
+  }
+
+
+  function showMenu(alias) {
+    //alert(alias)
+    var id = "#submenu" + alias
+    $(id).fadeIn(0);
+  }
+
+  function hideMenu(alias,t) {
+    var id = "#submenu" + alias
+    $(id).fadeOut(t);
+  }
+
+
+
+  $(".menuitem").hover(function() {
+    hideAllMenus();
+    var alias = $(this).data("menu")
+    showMenu(alias);
+  });
+
+
+  var $root = $('html, body');
+  $('a').click(function() {
+      var href = $.attr(this, 'href');
+      $root.animate({
+          scrollTop: $(href).offset().top
+      }, 500, function () {
+          window.location.hash = href;
+      });
+      return false;
+  });
+
+</script>
+
 </html>
