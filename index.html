@@ -6,208 +6,81 @@
   <title>Offshore Surf Camp Marocco</title>
   <script src="jquery-3.1.0.min.js"></script>
   <script src="jquery.scrollify.min.js"></script>
-  <script src="instafeed.min.js"></script>
+  <!--font-family: 'Amatica SC', cursive;
+font-family: 'Contrail One', cursive;
 
-
-
-
-
+-->
   <script>
     $(function() {
       $.scrollify({
         section: ".scrollanchor",
       });
-    });
+    });</script>
 
-    $(document).on('click', 'a', function(event) {
-      event.preventDefault();
-
-      $('html, body').animate({
-        scrollTop: $($.attr(this, 'href')).offset().top
-      }, 500);
-    });
-
-    var userFeed = new Instafeed({
-      get: 'user',
-      userId: '5024480',
-      accessToken: '5024480.1677ed0.de2dd7ec272d49909317d814386c242e',
-      limit: 24,
-      template: '<a style="height:{{height}}" href="{{link}}"><img src="{{image}}" /></a>'
-    });
-    // bind the load more button
-
-    userFeed.run();
-  </script>
-
-
-  <!--font-family: 'Merriweather', serif;
-font-family: 'Abril Fatface', cursive;
-font-family: 'Contrail One', cursive;-->
-  <style type="text/css">
-    .header {
-      padding: 45px !important;
-      list-style-type: none;
+  <style>
+    body {
+      max-height: 100vh;
+      min-height: 100vh;
+      border: 0;
       margin: 0;
       padding: 0;
-      overflow: hidden;
-      position: fixed;
-      top: 0;
-      width: 100%;
     }
 
-    .notheader {
-      /*margin-top: 30px;*/
+    .bg1 {
+      background-image: url("bg1.jpg");
     }
 
-    .bg {
+    .bg2 {
+      background-image: url("bg2.jpg");
+    }
+
+    .bg3 {
+      background-image: url("bg3.jpg");
+    }
+
+    .page {
+      min-height: 100vh;
+        max-height: 200vh;
       /* image */
       background-position: center;
       /* center the image */
       background-size: cover;
       /* cover the entire window */
       min-width: 100vw;
-      height: 100vh;
-      padding: 45px
-    }
-
-    .bg1 {
-      background-image: url("DSC_0547.JPG");
-    }
-
-    .bg2 {
-      background-image: url("IMG_4293.JPG");
-    }
-
-    .bg3 {
-      background-image: url("DSC06396.JPG");
-    }
-
-    .bg4 {
-      background-image: url("IMG_6281.JPG");
-    }
-
-    .bg5 {
-      background-image: url("IMG_2817.JPG");
-    }
-
-    .bg6 {
-      background-image: url("DSC_0542.JPG");
-    }
-
-    .bgblack {
-      background-color: teal;
-    }
-
-    body {
-      margin: 0;
     }
 
     .title {
       color: white;
-      font-weight: lighter !important;
-      letter-spacing: 8px;
-      text-transform: uppercase;
-      font-family: 'Contrail One', cursive;
-      font-size: 4em;
+    font-family: 'Contrail One', cursive;
+    font-size: 4em;
+    display: inline-block;
+    padding:  1%;
+    margin-left: 1%;
+    margin-right: 1%;
     }
 
     .subtitle {
-      margin-top: 29vh;
-      margin-left: 100px;
       color: white;
-      font-weight: lighter !important;
-      text-transform: uppercase;
-      font-size: 3em !important;
       font-family: 'Amatica SC', cursive;
-      letter-spacing: 8px;
-      width: 30%;
-    }
-
-    .contentsubmenu {
-      color: white;
-      text-transform: uppercase;
-      font-weight: lighter !important;
-      font-size: 2em !important;
-      font-family: 'Contrail One', cursive;
-      letter-spacing: 4px;
-      margin-left: 45px
-    }
-
-    .menuitem {
-      color: white;
-      text-transform: uppercase;
-      font-weight: lighter !important;
-      font-size: 1em !important;
-      font-family: 'Amatica SC', cursive;
-      letter-spacing: 8px;
-      margin-left: 45px
+      font-size: 2em;
+      display: inline-block;
+      padding: 1%;
+      margin: 1%;
     }
 
     .content {
-      margin-top: 150px;
-      margin-right: 90px;
-      padding: 45px;
       color: white;
-      font-family: 'Contrail One', cursive;
-      font-weight: lighter;
-    }
-
-    .contenttitle {
-      color: white;
-      font-weight: lighter !important;
-      letter-spacing: 6px;
-      text-transform: uppercase;
-      font-family: 'Contrail One', cursive;
-      font-size: 3em;
-    }
-
-    .blackbg {
-      background-color: rgba(0, 0, 0, 0.3);
-    }
-
-    .menuitem> a:link {
-      color: white;
-      text-decoration: none;
-    }
-
-    .menuitem> a:visited {
-      color: white;
-      text-decoration: none;
-    }
-
-    .menuitem> a:hover {
-      color: white;
-      text-decoration: none;
-    }
-
-    .menuitem> a:active {
-      color: white;
-      text-decoration: none;
-    }
-
-    .contentsubmenu>a:link {
-      color: white;
-      text-decoration: none;
-    }
-
-    .contentsubmenu>a:visited {
-      color: white;
-      text-decoration: none;
-    }
-
-    .contentsubmenu>a:hover {
-      color: white;
-      text-decoration: none;
-    }
-
-    .contentsubmenu>a:active {
-      color: white;
-      text-decoration: none;
+    font-family: 'Contrail One', cursive;
+    font-size: 1em;
+    display: inline-block;
+    padding: 1%;
+    margin-left: 1%;
+    margin-right: 1%;
     }
 
     .txt {
       margin: 0;
-      max-width: 250px;
+      max-width: 100vh;
       min-width: 250px;
       margin: 2px;
       font-size: 14px;
@@ -227,15 +100,9 @@ font-family: 'Contrail One', cursive;-->
       border: solid 2px #33ccff;
     }
 
-    #instafeed img {
-      vertical-align: middle;
-    }
-
     .btn {
       margin: 2px;
-      min-width: 556px !important;
-      max-width: 556px !important;
-      width: 558px !important;
+      max-width: 100vh;
       font-size: 14px;
       appearance: none;
       box-shadow: none;
@@ -247,170 +114,82 @@ font-family: 'Contrail One', cursive;-->
       font-weight: lighter !important;
       letter-spacing: 2px;
     }
-    /*.btn {
-      border: 0px;
-      width: 250px;
-      height: 25px;
-      margin-top: 5px;
-      padding-left: 0px;
-      padding-right: 0px;
-    }*/
 
     .area {
       resize: vertical;
       min-height: 50px;
       height: 100px;
       max-height: 150px;
-      min-width: 532px !important;
-      max-width: 532px !important;
-      width: 532px !important;
     }
-
-    .bot {
-      position: fixed;
-      bottom: 0px;
-      font-family: 'Amatica SC', cursive;
-      color: white;
-      font-size: x-large;
-    }
-
-    .scrollanchor {
-      min-height: 100vh;
-    }
+        .bgblack {
+          background-color: rgba(0,0,0,0.3);
+        }
   </style>
+
 </head>
 
 <body>
 
-  <div class="header">
-    <div class="title">offshore surf</div><span class="menuitem"><a href="#home">home</a> / <a href="#about">about us</a>/ <a href="#packages">packages</a> / <a href="#booking">booking & contact</a></span>
+  <div id="home" class="page bg1 scrollanchor">
+    <div class="title bgblack">OFFSHORE SURF</div><br/>
+    <div class="subtitle bgblack">"THE HOME OF SURF PROGRESSION IN MOROCCO"</div><br/>
+    <div class="content bgblack">To us, surfing is not only about riding a wave, but exploring new places, adventure, meeting new people and making friends around the world - we want you to become a part of it!</div>
   </div>
-  <div class="notheader">
-
-    <div id="home" class="bg bg1 scrollanchor">
-      <div class="subtitle">"the home of surf progression in morocco"</div>
+  <div id="content1" class="page bg2 scrollanchor">
+    <div class="bgblack title">OFFSHORE SURF</div><br/>
+    <div class="bgblack subtitle">PACKAGES</div><br/>
+    <div class="bgblack content">
+      We offer a variety of packages that suit absolutely anyone, even if you haven't surfed before!
+      <br/><br/>Lessons are tailored to individuals to provide the most effective tutelage, and we provide photo feedback sessions to help you identify any weaknesses you might have in order to improve.
+      <br/><br/>We also provide surf guiding packages to show the experienced the very best surf spots in the continent, tailored to each days forcast of course.
+      <br/><br/>All packages come with optional yoga lessons, which are especially tailored to surfers, and have proved very beneficial to increasing your surfing potential, as well as your overall wellbeing.
+      <br/><br/>Prices are from 200EUR without accomodation, or 400EUR with.
     </div>
-    <div id="about" class="bg bg2 scrollanchor">
-      <div class="content blackbg">
-        <div class="contenttitle">About Us</div>
-        Offshore surf specialises in delivering tailor made surf lessons for all abilities, and surf guiding for advanced surfers; consistently providing unrivaled, unforgettable and stress free surf holidays is what we do best.
+  </div>
+  <div id="content2" class="page bg3 scrollanchor">
+    <div class="bgblack title">OFFSHORE SURF</div><br/>
+    <div class="bgblack subtitle">CONTACT</div><br/>
+    <div class="bgblack content">
+      If you have any questions, or would like to enquire about availability, please do not hesitate to contact us.
+      <form class="form" action="https://formspree.io/tjsheedy@hotmail.co.uk" method="POST">
+        <input class="txt" type="text" name="name" placeholder="name">
+        <input class="txt" type="email" name="_replyto" placeholder="email">
         <br/>
-        <br/>Our surf store is well located in Tamraght, a small surf and fishing village situated in between Taghazout and Aourir (banana village), and just 15km north of Agadir.
+        <input class="txt" type="text" name="datefrom" placeholder="date from">
+        <input class="txt" type="text" name="dateto" placeholder="date to">
         <br/>
-        <br/>We offer a variety of services at the surf centre from Surf lessons, board and wetsuit hire, to in-store surf theory, accommodation, care hire, quad excursions, horse and camel trekking, desert trips, Atlas Mountain hiking, city tours and much
-        more.
+        <textarea class="txt area" type="textarea" name="detail" placeholder="message" dra rows="5"></textarea>
         <br/>
-        <br/>We pride ourselves on our quality, personal services. We are following our passion, and we want to share that passion with you!
-      </div>
+
+
+        <input type="hidden" name="_subject" value="Formspree test" />
+        <input type="hidden" name="_next" value="http://tomsheedy.github.io/surf" />
+        <input class="btn" type="submit" value="send">
+      </form>
     </div>
-
-    <div id="packages" class="bg bg3 scrollanchor">
-      <div class="content blackbg">
-        <div class="contenttitle">Packages</div>
-        <div class="contentsubmenu"><a href="#package1">package one</a> / <a href="#package2">package two</a></div>
-        Literally accusamus vice kale chips DIY unicorn poutine, leggings hashtag sunt venmo fap. Pinterest vape neutra vero blue bottle, activated charcoal thundercats in quis irony kickstarter occupy man braid live-edge. Forage blue bottle poutine taxidermy,
-        excepteur ut ex tote bag photo booth enamel pin id art party. Yr cardigan delectus waistcoat authentic. Pop-up actually migas venmo et, direct trade fugiat salvia hammock mlkshk. Laboris 8-bit meggings DIY, portland succulents williamsburg tousled
-        eu vegan fashion axe ut poke YOLO af. Slow-carb ramps delectus ut nostrud.
-        <br/> Cillum man braid reprehenderit banh mi, 8-bit chambray mumblecore. Ethical man bun williamsburg deserunt, nostrud chia crucifix polaroid eu cray schlitz selfies beard ut. Cred ex succulents elit. You probably haven't heard of them next level
-        do banjo taxidermy, kombucha knausgaard kinfolk. Flexitarian hell of id asymmetrical, laboris locavore mollit selfies delectus cronut. Quinoa master cleanse etsy eu, tumeric literally blue bottle laborum. Ex pok pok beard fashion axe, blue bottle
-        occaecat raw denim minim four dollar toast banjo ullamco kogi knausgaard ugh bushwick.
-        <br/> Narwhal copper mug intelligentsia woke snackwave. Meditation vaporware lo-fi, williamsburg food truck fashion axe banjo raw denim VHS fugiat flexitarian. Umami exercitation butcher, sint truffaut PBR&B et etsy pop-up sartorial hoodie pug. Air
-        plant vegan consequat keffiyeh intelligentsia velit nulla. Meggings meditation pug, fingerstache street art shabby chic sriracha laboris +1 master cleanse yr. Cardigan fugiat ennui leggings, tbh everyday carry ea copper mug unicorn vero post-ironic
-        enamel pin flannel tilde pug. Quis authentic laboris in.
-        <br/> Reprehenderit excepteur master cleanse listicle deep v aesthetic, 8-bit you probably haven't heard of them trust fund laborum VHS neutra iceland. Cray eu accusamus, tousled gentrify edison bulb beard celiac slow-carb four dollar toast raw denim
-        yr reprehenderit glossier meditation. Est direct trade aute, pabst nesciunt church-key meditation labore. Hammock gochujang four loko vegan. Keffiyeh microdosing beard ugh. Craft beer meditation ugh sint laboris enim cliche whatever gluten-free.
-        Humblebrag ea accusamus cred eu, glossier snackwave master cleanse activated charcoal semiotics.
-      </div>
-    </div>
-
-    <div id="package1" class="bg bg4 scrollanchor">
-      <div class="content blackbg">
-        <div class="contenttitle">Package One</div>
-        <div class="contentsubmenu"><a href="#package1">package one</a> / <a href="#package2">package two</a></div>
-        Literally accusamus vice kale chips DIY unicorn poutine, leggings hashtag sunt venmo fap. Pinterest vape neutra vero blue bottle, activated charcoal thundercats in quis irony kickstarter occupy man braid live-edge. Forage blue bottle poutine taxidermy,
-        excepteur ut ex tote bag photo booth enamel pin id art party. Yr cardigan delectus waistcoat authentic. Pop-up actually migas venmo et, direct trade fugiat salvia hammock mlkshk. Laboris 8-bit meggings DIY, portland succulents williamsburg tousled
-        eu vegan fashion axe ut poke YOLO af. Slow-carb ramps delectus ut nostrud.
-        <br/> Cillum man braid reprehenderit banh mi, 8-bit chambray mumblecore. Ethical man bun williamsburg deserunt, nostrud chia crucifix polaroid eu cray schlitz selfies beard ut. Cred ex succulents elit. You probably haven't heard of them next level
-        do banjo taxidermy, kombucha knausgaard kinfolk. Flexitarian hell of id asymmetrical, laboris locavore mollit selfies delectus cronut. Quinoa master cleanse etsy eu, tumeric literally blue bottle laborum. Ex pok pok beard fashion axe, blue bottle
-        occaecat raw denim minim four dollar toast banjo ullamco kogi knausgaard ugh bushwick.
-        <br/> Narwhal copper mug intelligentsia woke snackwave. Meditation vaporware lo-fi, williamsburg food truck fashion axe banjo raw denim VHS fugiat flexitarian. Umami exercitation butcher, sint truffaut PBR&B et etsy pop-up sartorial hoodie pug. Air
-        plant vegan consequat keffiyeh intelligentsia velit nulla. Meggings meditation pug, fingerstache street art shabby chic sriracha laboris +1 master cleanse yr. Cardigan fugiat ennui leggings, tbh everyday carry ea copper mug unicorn vero post-ironic
-        enamel pin flannel tilde pug. Quis authentic laboris in.
-        <br/> Reprehenderit excepteur master cleanse listicle deep v aesthetic, 8-bit you probably haven't heard of them trust fund laborum VHS neutra iceland. Cray eu accusamus, tousled gentrify edison bulb beard celiac slow-carb four dollar toast raw denim
-        yr reprehenderit glossier meditation. Est direct trade aute, pabst nesciunt church-key meditation labore. Hammock gochujang four loko vegan. Keffiyeh microdosing beard ugh. Craft beer meditation ugh sint laboris enim cliche whatever gluten-free.
-        Humblebrag ea accusamus cred eu, glossier snackwave master cleanse activated charcoal semiotics.
-      </div>
-    </div>
-
-    <div id="package2" class="bg bg5 scrollanchor">
-      <div class="content blackbg">
-        <div class="contenttitle">Package Two</div>
-        <div class="contentsubmenu"><a href="#package1">package one</a> / <a href="#package2">package two</a></div>
-        Literally accusamus vice kale chips DIY unicorn poutine, leggings hashtag sunt venmo fap. Pinterest vape neutra vero blue bottle, activated charcoal thundercats in quis irony kickstarter occupy man braid live-edge. Forage blue bottle poutine taxidermy,
-        excepteur ut ex tote bag photo booth enamel pin id art party. Yr cardigan delectus waistcoat authentic. Pop-up actually migas venmo et, direct trade fugiat salvia hammock mlkshk. Laboris 8-bit meggings DIY, portland succulents williamsburg tousled
-        eu vegan fashion axe ut poke YOLO af. Slow-carb ramps delectus ut nostrud.
-        <br/> Cillum man braid reprehenderit banh mi, 8-bit chambray mumblecore. Ethical man bun williamsburg deserunt, nostrud chia crucifix polaroid eu cray schlitz selfies beard ut. Cred ex succulents elit. You probably haven't heard of them next level
-        do banjo taxidermy, kombucha knausgaard kinfolk. Flexitarian hell of id asymmetrical, laboris locavore mollit selfies delectus cronut. Quinoa master cleanse etsy eu, tumeric literally blue bottle laborum. Ex pok pok beard fashion axe, blue bottle
-        occaecat raw denim minim four dollar toast banjo ullamco kogi knausgaard ugh bushwick.
-        <br/> Narwhal copper mug intelligentsia woke snackwave. Meditation vaporware lo-fi, williamsburg food truck fashion axe banjo raw denim VHS fugiat flexitarian. Umami exercitation butcher, sint truffaut PBR&B et etsy pop-up sartorial hoodie pug. Air
-        plant vegan consequat keffiyeh intelligentsia velit nulla. Meggings meditation pug, fingerstache street art shabby chic sriracha laboris +1 master cleanse yr. Cardigan fugiat ennui leggings, tbh everyday carry ea copper mug unicorn vero post-ironic
-        enamel pin flannel tilde pug. Quis authentic laboris in.
-        <br/> Reprehenderit excepteur master cleanse listicle deep v aesthetic, 8-bit you probably haven't heard of them trust fund laborum VHS neutra iceland. Cray eu accusamus, tousled gentrify edison bulb beard celiac slow-carb four dollar toast raw denim
-        yr reprehenderit glossier meditation. Est direct trade aute, pabst nesciunt church-key meditation labore. Hammock gochujang four loko vegan. Keffiyeh microdosing beard ugh. Craft beer meditation ugh sint laboris enim cliche whatever gluten-free.
-        Humblebrag ea accusamus cred eu, glossier snackwave master cleanse activated charcoal semiotics.
-      </div>
-    </div>
-
-    <div id="booking" class="bg bg6 scrollanchor">
-      <div class="content">
-        <form class="form" action="https://formspree.io/tjsheedy@hotmail.co.uk" method="POST">
-          <input class="txt" type="text" name="name" placeholder="name">
-          <input class="txt" type="email" name="_replyto" placeholder="email">
-          <br/>
-          <input class="txt" type="text" name="datefrom" placeholder="date from">
-          <input class="txt" type="text" name="dateto" placeholder="date to">
-          <br/>
-          <textarea class="txt area" type="textarea" name="detail" placeholder="message" dra rows="5"></textarea>
-          <br/>
-
-
-          <input type="hidden" name="_subject" value="Formspree test" />
-          <input type="hidden" name="_next" value="http://tomsheedy.github.io/surf" />
-          <input class="btn" type="submit" value="send">
-        </form>
-      </div>
-    </div>
-
-    <div id="photos" class="bg bgblack scrollanchor">
-      <div class="content">
-        <div id="instafeed"></div>
-      </div>
-    </div>
-
-    <div class="bot">we are offshore surf. we host surf camps for beginners and intermediates near agadir, morocco. contact us for further information. Tom Sheedy, 2016</div>
-
   </div>
 
 
-  <style type="text/css">
-    body {
-      -webkit-animation-delay: 0.01s;
-      -webkit-animation-name: fontfix;
-      -webkit-animation-duration: 0.01s;
-      -webkit-animation-iteration-count: 1;
-      -webkit-animation-timing-function: linear;
-    }
 
-    @-webkit-keyframes fontfix {
-      from {
-        opacity: 1;
+    <style type="text/css">
+      body {
+        -webkit-animation-delay: 0.01s;
+        -webkit-animation-name: fontfix;
+        -webkit-animation-duration: 0.01s;
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-timing-function: linear;
       }
-      to {
-        opacity: 1;
+
+      @-webkit-keyframes fontfix {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 1;
+        }
       }
-    }
-  </style>
-  <link href="googlefonts.css" rel="stylesheet">
+    </style>
+    <link href="googlefonts.css" rel="stylesheet">
 
 </body>
 
