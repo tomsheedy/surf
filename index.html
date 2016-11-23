@@ -4,16 +4,16 @@
 <head>
   <meta name=viewport content="width=device-width, initial-scale=1">
   <title>Offshore Surf Camp Marocco</title>
-  <style>body{max-height:100vh;min-height:100vh;border:0;margin:0;padding:0}.bg1{background-image:url(bg1.jpg)}.bg2{background-image:url(bg2.jpg)}.bg3{background-image:url(bg3.jpg)}.page{min-height:100vh;max-height:200vh;background-position:center;background-size:cover;min-width:100vw}.title{color:white;font-family:'Contrail One',cursive;font-size:4em;display:inline-block;padding:1%;margin-left:1%;margin-right:1%;margin-top:1%}.subtitle{color:white;font-family:'Amatica SC',cursive;font-size:2em;display:inline-block;padding:1%;margin:1%}.content{margin-bottom:50px;color:white;font-family:'Contrail One',cursive;font-size:1em;display:inline-block;padding:1%;margin-left:1%;margin-right:1%;max-width:600px}.txt{margin:0;max-width:100vh;min-width:250px;margin:2px;font-size:14px;appearance:none;box-shadow:none;border-radius:none;padding:10px;border:solid 2px #c9c9c9;transition:border 0.3s;font-family:'Contrail One',cursive;font-weight:lighter!important;letter-spacing:2px}.txt:focus{outline:none;border:solid 2px #3cf}.btn{margin:2px;max-width:100vh;font-size:14px;appearance:none;box-shadow:none;border-radius:none;padding:10px;border:solid 2px #c9c9c9;transition:border 0.3s;font-family:'Contrail One',cursive;font-weight:lighter!important;letter-spacing:2px}.area{resize:vertical;min-height:50px;height:100px;max-height:150px}.bgblack{background-color:rgba(0,0,0,.3)}</style>
+  <style>a:link{color:white;text-decoration:none}a:visited{color:white;text-decoration:none}a:hover{color:white;text-decoration:none}a:active{color:white;text-decoration:none}body{max-height:100vh;min-height:100vh;border:0;margin:0;padding:0}.bg1{background-image:url(bg1.jpg)}.bg2{background-image:url(bg2.jpg)}.bg3{background-image:url(bg3.jpg)}.page{min-height:100vh;max-height:200vh;background-position:center;background-size:cover;min-width:100vw}.title{color:white;font-family:'Contrail One',cursive;font-size:4em;display:inline-block;padding:1%;margin-left:1%;margin-right:1%;margin-top:1%}.subtitle{color:white;font-family:'Amatica SC',cursive;font-size:2em;display:inline-block;padding:1%;margin:1%}.content{margin-bottom:50px;color:white;font-family:'Contrail One',cursive;font-size:1em;display:inline-block;padding:1%;margin-left:1%;margin-right:1%;max-width:600px}.txt{margin:0;max-width:100vh;min-width:250px;margin:2px;font-size:14px;appearance:none;box-shadow:none;border-radius:none;padding:10px;border:solid 2px #c9c9c9;transition:border 0.3s;font-family:'Contrail One',cursive;font-weight:lighter!important;letter-spacing:2px}.txt:focus{outline:none;border:solid 2px #3cf}.btn{margin:2px;max-width:100vh;font-size:14px;appearance:none;box-shadow:none;border-radius:none;padding:10px;border:solid 2px #c9c9c9;transition:border 0.3s;font-family:'Contrail One',cursive;font-weight:lighter!important;letter-spacing:2px}.area{resize:vertical;min-height:50px;height:100px;max-height:150px}.bgblack{background-color:rgba(0,0,0,.3)}</style>
 </head>
 <body>
   <div id="home" class="page bg1 scrollanchor">
     <div class="title">OFFSHORE SURF</div><br/>
     <div class="subtitle">"THE HOME OF SURF PROGRESSION IN MOROCCO"</div><br/>
   </div>
-  <div id="content1" class="page bg2 scrollanchor">
-    <div class="bgblack title">OFFSHORE SURF</div><br/>
-    <div class="bgblack subtitle">PACKAGES</div><br/>
+  <div id="packages" class="page bg2 scrollanchor">
+    <div class="title">OFFSHORE SURF</div><br/>
+    <div class="subtitle"><a href="#home">HOME</a> / <u>PACKAGES</u> / <a href="#contact">CONTACT</a></div><br/>
     <div class="bgblack content">
       To us, surfing is not only about riding a wave, but exploring new places, adventure, meeting new people and making friends around the world - we want you to become a part of it!
       <br/><br/>We offer a variety of packages that suit absolutely anyone, even if you haven't surfed before!
@@ -23,9 +23,9 @@
       <br/><br/>Prices are from 200EUR without accomodation, or 400EUR with.
     </div>
   </div>
-  <div id="content2" class="page bg3 scrollanchor">
-    <div class="bgblack title">OFFSHORE SURF</div><br/>
-    <div class="bgblack subtitle">CONTACT</div><br/>
+  <div id="contact" class="page bg3 scrollanchor">
+    <div class="title">OFFSHORE SURF</div><br/>
+    <div class="subtitle"><a href="#home">HOME</a> / <a href="#packages">PACKAGES</a> / <u>CONTACT</u></div><br/>
     <div class="bgblack content">
       If you have any questions, or would like to enquire about availability,<br/>please do not hesitate to contact us.<br/><br/>
       <form class="form" action="https://formspree.io/tjsheedy@hotmail.co.uk" method="POST">
@@ -47,6 +47,6 @@
     <link href="googlefonts.css" rel="stylesheet">
     <script src="jquery-3.1.0.min.js"></script>
     <script src="jquery.scrollify.min.js"></script>
-<script>$(function(){$.scrollify({section:".scrollanchor",})});</script>
+<script>$(function(){$.scrollify({section:".scrollanchor",})});$(document).on('click','a',function(event){event.preventDefault();$('html, body').animate({scrollTop:$($.attr(this,'href')).offset().top},500)})</script>
 </body>
 </html>
