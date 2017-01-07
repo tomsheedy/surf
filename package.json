@@ -26,5 +26,11 @@
     "url": "https://github.com/lukehaas/Scrollify/issues"
   },
   "demo": "http://projects.lukehaas.me/scrollify",
-  "homepage": "https://github.com/lukehaas/Scrollify"
+  "homepage": "https://github.com/lukehaas/Scrollify",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-sass": "^3.0.0",
+    "gulp-sourcemaps": "^1.9.1"
+  }
 }
