@@ -60,6 +60,8 @@
 			// 	alignment: 'center'
 			// });
 
+			Grid.init();
+
 		// Scrolly links.
 			$('.scrolly').scrolly();
 

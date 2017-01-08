@@ -8,6 +8,7 @@
 		<!--[if lte IE 8]><script src="js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
+		<script src="js/modernizr.custom.js"></script>
 	</head>
 	<body class="homepage">
 		<div id="page-wrapper">
@@ -54,12 +55,15 @@
 
 			<!-- Banner -->
 				<section id="banner">
-					<header>
-						<h2>Hi. You're looking at <strong>Helios</strong>.</h2>
-						<p>
-							A (free) responsive site template by <a href="http://html5up.net">HTML5 UP</a>.
-							Built on <strong>skel</strong> and released under the <a href="http://html5up.net/license">CCA</a> license.
-						</p>
+					<header class="container">
+						<h2>The home of surf progression in <strong>Morocco</strong></h2>
+						<div class="row">
+							<div class="10u(narrow) -1u(narrow) 8u(wide) -2u(wide) 12u(mobile)">
+								<p>
+									Committed to bringing you the ultimate surf adventure in Morocco, we provide surf holidays for all levels, surf guiding and a cultural experience not to be rivaled. We are not a big surf centre; rather we pride ourselves on the quality, personal service we consistently provide.
+								</p>
+							</div>
+						</div>
 					</header>
 				</section>
 
@@ -67,27 +71,22 @@
 				<div class="wrapper style2">
 
 					<article id="main" class="container special">
-						<a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a>
-						<header>
-							<h2><a href="#">Sed massa imperdiet magnis</a></h2>
-							<p>
-								Sociis aenean eu aenean mollis mollis facilisis primis ornare penatibus aenean. Cursus ac enim
-								pulvinar curabitur morbi convallis. Lectus malesuada sed fermentum dolore amet.
-							</p>
-						</header>
-						<p>
-							Commodo id natoque malesuada sollicitudin elit suscipit. Curae suspendisse mauris posuere accumsan massa
-							posuere lacus convallis tellus interdum. Amet nullam fringilla nibh nulla convallis ut venenatis purus
-							sit arcu sociis. Nunc fermentum adipiscing tempor cursus nascetur adipiscing adipiscing. Primis aliquam
-							mus lacinia lobortis phasellus suscipit. Fermentum lobortis non tristique ante proin sociis accumsan
-							lobortis. Auctor etiam porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum
-							consequat integer interdum integer purus sapien. Nibh eleifend nulla nascetur pharetra commodo mi augue
-							interdum tellus. Ornare cursus augue feugiat sodales velit lorem. Semper elementum ullamcorper lacinia
-							natoque aenean scelerisque.
-						</p>
-						<footer>
-							<a href="#" class="button">Continue Reading</a>
-						</footer>
+						<div class="row">
+							<div class="6u 12u(mobile)">
+								<div class="image featured"><img src="images/offshore-surf-morocco-3.jpg" alt="Offshore Surf instructors will guide you to the best spots Morocco has to offer" /></div>
+							</div>
+							<div class="6u 12u(mobile)">
+								<header>
+									<h2>Surfing in Morocco </h2>
+									<p>
+										Our region boasts an impressive 160km of North Atlantic coastline bursting with a spectacular array of surf spots, to suit absolutely any ability. We will create a unique surf package to suit you, and to give you the best possible experience, whether you are a complete beginner or an advanced surfer waiting to hit the famous breaks Morocco has to offer!
+									</p>
+								</header>
+								<footer>
+									<a href="#packages" class="button">View our Packages</a>
+								</footer>
+							</div>
+						</div>
 					</article>
 
 				</div>
@@ -95,43 +94,113 @@
 			<!-- Features -->
 				<div class="wrapper style1">
 
-					<section id="features" class="container special">
+					<section id="packages" class="special">
 						<header>
-							<h2>Morbi ullamcorper et varius leo lacus</h2>
-							<p>Ipsum volutpat consectetur orci metus consequat imperdiet duis integer semper magna.</p>
+							<h2>Packages</h2>
 						</header>
-						<div class="row">
-							<article class="4u 12u(mobile) special">
-								<a href="#" class="image featured"><img src="images/pic07.jpg" alt="" /></a>
-								<header>
-									<h3><a href="#">Gravida aliquam penatibus</a></h3>
-								</header>
-								<p>
-									Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
-									porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-								</p>
-							</article>
-							<article class="4u 12u(mobile) special">
-								<a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
-								<header>
-									<h3><a href="#">Sed quis rhoncus placerat</a></h3>
-								</header>
-								<p>
-									Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
-									porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-								</p>
-							</article>
-							<article class="4u 12u(mobile) special">
-								<a href="#" class="image featured"><img src="images/pic09.jpg" alt="" /></a>
-								<header>
-									<h3><a href="#">Magna laoreet et aliquam</a></h3>
-								</header>
-								<p>
-									Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
-									porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-								</p>
-							</article>
+
+						<div id="og-grid" class="og-grid">
+							<div class="row">
+								<article class="4u 6u(narrow) 12u(mobile) special">
+									<a href="#" data-largesrc="images/pic07.jpg" data-title="Beginner Surf Lessons" data-description="" class="image">
+										<img src="images/pic07.jpg" alt="img01"/>
+										<header>
+											<h3>Beginner's Surf Lessons</h3>
+										</header>
+										<p>
+											Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. 
+										</p>
+									</a>
+									<div class="expand-content">
+										<p>If you’re new to surfing or still mastering the white water, let our surf instructors introduce you to the waves and transform you into a surfer. We understand that everybody learns differently, so  our instructors have been trained to provide top quality, tailor made surf lessons whatever your ability and learning style - they will always be in the water with you for support and encouragement.</p>
+										<p>Go at your own pace, lessons can be challenging but are always amazing fun!! Look out for our photographer on the beach, it’s always priceless to look at photos after dinner, and so beneficial to your progress in the water!</p>
+										<p><strong>What’s included:</strong></p>
+										<ul>
+											<li>Return Agadir transfers (min 5 night stay)</li>
+											<li>Surf transport to the best spots according to your ability and the conditions each day </li>
+											<li>2.5 hour surf lesson </li>
+											<li>Supervised free surf sessions after lunch </li>
+											<li>All surf equipment</li>
+											<li>Accommodation at Villa Azur</li>
+											<li>Traditional Moroccan breakfasts and dinners </li>
+											<li>Lunch and water at the beach </li>
+											<li>Free wifi at the Villa</li>
+											<li>Offshore surf guide on hand 24/7</li>
+										</ul>
+										<footer>
+											<a href="#" class="button">Book Now</a>
+										</footer>
+									</div>
+								</article>
+								<article class="4u 6u(narrow) 12u(mobile) special">
+									<a href="#" data-largesrc="images/pic07.jpg" data-title="Intermediate Surf Lessons" data-description="" class="image">
+										<img src="images/pic07.jpg" alt="img02"/>
+										<header>
+											<h3>Horse Riding</h3>
+										</header>
+										<p>
+											Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. 
+										</p>
+									</a>
+								</article>
+								<article class="4u$ 6u(narrow) 12u(mobile) special">
+									<a href="#" data-largesrc="images/pic07.jpg" data-title="Surf Guiding" data-description="" class="image">
+										<img src="images/pic07.jpg" alt="img03"/>
+										<header>
+											<h3>Horse Riding</h3>
+										</header>
+										<p>
+											Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. 
+										</p>
+									</a>
+								</article>
+								<article class="4u 6u(narrow) 12u(mobile) special">
+									<a href="#" data-largesrc="images/pic07.jpg" data-title="Veggies sunt bona vobis" data-description="" class="image">
+										<img src="images/pic07.jpg" alt="img04"/>
+										<header>
+											<h3>Horse Riding</h3>
+										</header>
+										<p>
+											Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. 
+										</p>
+									</a>
+								</article>
+								<article class="4u 6u(narrow) 12u(mobile) special">
+									<a href="#" data-largesrc="images/pic07.jpg" data-title="Azuki bean" data-description="" class="image">
+										<img src="images/pic07.jpg" alt="img05"/>
+										<header>
+											<h3>Horse Riding</h3>
+										</header>
+										<p>
+											Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. 
+										</p>
+									</a>
+								</article>
+								<article class="4u$ 6u(narrow) 12u(mobile) special">
+									<a href="#" data-largesrc="images/pic07.jpg" data-title="Veggies sunt bona vobis" data-description="" class="image">
+										<img src="images/pic07.jpg" alt="img06"/>
+										<header>
+											<h3>Horse Riding</h3>
+										</header>
+										<p>
+											Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. 
+										</p>
+									</a>
+								</article>
+								<article class="4u 6u(narrow) 12u(mobile) special">
+									<a href="#" data-largesrc="images/pic07.jpg" data-title="Veggies sunt bona vobis" data-description="" class="image">
+										<img src="images/pic07.jpg" alt="img07"/>
+										<header>
+											<h3>Horse Riding</h3>
+										</header>
+										<p>
+											Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. 
+										</p>
+									</a>
+								</article>
+							</div>
 						</div>
+
 					</section>
 
 				</div>
@@ -285,16 +354,17 @@
 			<script src="js/skel.min.js"></script>
 			<script src="js/util.js"></script>
 			<script src="js/swiper.min.js"></script>
+			<script src="js/grid.js"></script>
 			<!--[if lte IE 8]><script src="js/ie/respond.min.js"></script><![endif]-->
 			<script src="js/main.js"></script>
 			<script>
 		    var swiper = new Swiper('.swiper-container', {
 		        //pagination: '.swiper-pagination',
 		        //paginationClickable: true,
-		        speed: 3000,
+		        speed: 4000,
         		keyboardControl: true,
         		parallax: true,
-        		autoplay: 6000,
+        		autoplay: 7000,
         		loop: true,
         		effect: 'fade'
 		    });
