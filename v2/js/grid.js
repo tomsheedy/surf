@@ -341,11 +341,13 @@ var Grid = (function() {
 
 	Preview.prototype = {
 		create : function() {
+
+			console.log('-----------');
+
 			// create Preview structure:
 			this.$title = $( '<h3></h3>' );
 			this.$description = $( '<p></p>' );
-			this.$href = $( '<a href="#">Visit website</a>' );
-			this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$href );
+			this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description );
 			this.$loading = $( '<div class="og-loading"></div>' );
 			this.$fullimage = $( '<div class="og-fullimg"></div>' ).append( this.$loading );
 			this.$closePreview = $( '<span class="og-close"></span>' );
@@ -377,17 +379,24 @@ var Grid = (function() {
 			current = this.$item.index();
 
 			// update preview´s content
-			var $itemEl = this.$item.children( 'a' ),
-				eldata = {
-					href : $itemEl.attr( 'href' ),
+			var $itemEl = this.$item.children( 'a' );
+
+			// if($itemEl.next('.expand-content').length > 0) {
+
+			// 	this.$item.saveContent = $itemEl.next('.expand-content');
+			// }
+
+			var eldata = {
 					largesrc : $itemEl.data( 'largesrc' ),
 					title : $itemEl.data( 'title' ),
-					description : $itemEl.next('.expand-content')
+					description : $itemEl.next('.expand-content').html()
 				};
 
 			this.$title.html( eldata.title );
-			this.$description.html( eldata.description );
-			this.$href.attr( 'href', eldata.href );
+			this.$description.html( eldata.description + '----' + eldata.description);
+
+			// TODO: Store the description somewhere that's not HTML, don't want duplicate content.
+			// this.$item.data('desciygi', eldata.description);
 
 			var self = this;
 			
