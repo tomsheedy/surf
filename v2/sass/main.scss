@@ -192,6 +192,15 @@
 		font-size: 0.8em;
 	}
 
+	.hide {
+		display: none;
+	}
+
+	.img-fluid {
+		max-width: 100%;
+    	height: auto;
+	}
+
 /* Sections/Article */
 
 	section, article {
@@ -228,7 +237,10 @@
 	}
 
 	footer {
-		margin: 2.5em 0 0 0;
+		position: absolute;
+		bottom: 20px;
+		margin: 0 auto;
+		width: 100%;
 	}
 
 /* Image */
@@ -590,21 +602,24 @@
 /* Header */
 
 	#header {
-		position: relative;
-		background-image: url('../../images/header.jpg');
-		background-size: cover;
-		background-position: center center;
-		background-attachment: fixed;
-		color: #fff;
+		position: relative;	
 		text-align: center;
-		padding: 7.5em 0 2em 0;
 		cursor: default;
 
-		&:before {
-			content: '';
-			display: inline-block;
-			vertical-align: middle;
-			height: 100%;
+		// &:before {
+		// 	content: '';
+		// 	display: inline-block;
+		// 	vertical-align: middle;
+		// 	height: 100%;
+		// }
+
+		.slider-overlay {
+			position: absolute;
+			z-index: 9;
+			margin: auto;
+			position: absolute;
+			top: 0; left: 0; bottom: 0; right: 0;
+			background:rgba(0,0,0,0.3);
 		}
 
 		.inner {
@@ -613,6 +628,8 @@
 			margin: 0;
 			display: inline-block;
 			vertical-align: middle;
+			width: 100%;
+			height: 100%;
 		}
 
 		header {
@@ -631,6 +648,31 @@
 
 			a {
 				color: inherit;
+			}
+		}
+
+		.logo {
+			background-image: url(../images/offshore-surf-logo-white@2x.png);
+		    background-size: 400px 499px;
+		    background-repeat: no-repeat;
+		    display: block;
+		    width: 400px;
+		    height: 499px;
+
+			bottom: 0;
+			left: 0;
+			margin: auto;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+
+		.start {
+			@include icon('\f0d7');
+			color: white;
+
+			&:before {
+				font-size: 80px;
 			}
 		}
 
@@ -687,12 +729,37 @@
 
 		&.is-loading {
 			#header {
-				&:after {
-					opacity: 1;
-				}
+				opacity: 0;
 			}
 		}
 	}
+
+/* SwiperJS */
+
+.swiper-container {
+    width: 100%;
+    // height: 100%;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
 
 /* Nav */
 
@@ -703,7 +770,7 @@
 		width: 100%;
 		text-align: center;
 		padding: 1.5em 0 1.5em 0;
-		z-index: 1;
+		z-index: 10;
 		overflow: hidden;
 
 		> ul {
@@ -751,10 +818,12 @@
 
 				> a, > span {
 					display: block;
-					color: inherit;
+					color: white;
 					text-decoration: none;
 					border: 0;
 					outline: 0;
+					cursor: pointer;
+					text-transform: uppercase;
 				}
 
 				> ul {
@@ -956,7 +1025,7 @@
 				position: absolute;
 				top: 50%;
 				margin: -1.5em 0 0 0;
-				background: url('images/arrow.svg') no-repeat center center;
+				background: url('../images/arrow.svg') no-repeat center center;
 			}
 
 			&:hover {
@@ -1039,6 +1108,10 @@
 				line-height: 1.75em;
 			}
 
+			footer {
+				bottom: 80px;
+			}
+
 		/* Carousel */
 
 			.carousel {
@@ -1067,6 +1140,10 @@
 				line-height: 1.5em;
 			}
 
+			footer {
+				bottom: 60px;
+			}
+
 		/* Wrapper */
 
 			.wrapper {
@@ -1077,7 +1154,7 @@
 		/* Header */
 
 			#header {
-				background-attachment: scroll;
+				// background-attachment: scroll;
 
 				.inner {
 					padding-left: 2em;
@@ -1124,6 +1201,14 @@
 			.timestamp {
 				display: block;
 				text-align: center;
+			}
+
+			#header {
+				.logo {
+					background-size: 400px 499px;
+				    width: 400px;
+				    height: 499px;
+				}
 			}
 
 		/* Footer */
@@ -1175,6 +1260,10 @@
 			hr {
 				top: 3em;
 				margin-bottom: 6em;
+			}
+
+			#header footer {
+				display: none;
 			}
 
 		/* Section/Article */
@@ -1352,7 +1441,7 @@
 					top: 0;
 					width: 100%;
 					height: 100%;
-					background: url('images/overlay.png');
+					background: url('../images/overlay.png');
 					background-size: 128px 128px;
 				}
 
@@ -1431,13 +1520,12 @@
 		/* Header */
 
 			#header {
-				background-attachment: scroll;
 				padding: 2.5em 0 0 0;
 
-				.inner {
-					padding-top: 1.5em;
-					padding-left: 1em;
-					padding-right: 1em;
+				.logo {
+					background-size: 150px 187px;
+				    width: 150px;
+				    height: 187px;
 				}
 
 				header {
@@ -1459,8 +1547,8 @@
 			body.homepage {
 				#header {
 					min-height: 0;
-					padding: 5.5em 0 5em 0;
-					height: auto;
+					padding: 0;
+					height: 33vh;
 
 					&:before {
 						display: none;

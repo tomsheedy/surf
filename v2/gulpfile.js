@@ -8,9 +8,9 @@ var uglify = require('gulp-uglify');
 var parker = require('gulp-parker');
 var browserSync = require('browser-sync').create();
 
-// Compile sass to compressed css andd add vendor prefixes
+// Compile sass to compressed css and add vendor prefixes
 gulp.task('styles', function() {
-  gulp.src('./sass/style.scss')
+  gulp.src('./sass/main.scss')
     .pipe(sass())
     .on('error', function(error) {
       console.log('\n ✖ ✖ ✖ ✖ ✖ ERROR ✖ ✖ ✖ ✖ ✖ \n \n' + error.message + '\n \n');
@@ -37,7 +37,7 @@ gulp.task('scripts', function() {
 
 // CSS analysis tool
 gulp.task('parker', function() {
-  return gulp.src('./css/style.css')
+  return gulp.src('./css/main.css')
     .pipe(parker());
 });
 
@@ -46,8 +46,8 @@ gulp.task('serve', ['styles', 'scripts'], function() {
   browserSync.init({
     server: '.'
   });
-  gulp.watch('sass/**/*.scss', ['styles']);
-  gulp.watch('js/**/*.js', ['scripts']);
+  gulp.watch('sass/*.scss', ['styles']).on('change', browserSync.reload);
+  gulp.watch('js/**/*.js', ['scripts']).on('change', browserSync.reload);
   gulp.watch('./*.html').on('change', browserSync.reload);
 });
 
