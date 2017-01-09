@@ -349,9 +349,9 @@ var Grid = (function() {
 			this.$description = $( '<p></p>' );
 			this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description );
 			this.$loading = $( '<div class="og-loading"></div>' );
-			this.$fullimage = $( '<div class="og-fullimg"></div>' ).append( this.$loading );
+			// this.$fullimage = $( '<div class="og-fullimg"></div>' ).append( this.$loading );
 			this.$closePreview = $( '<span class="og-close"></span>' );
-			this.$previewInner = $( '<div class="og-expander-inner"></div>' ).append( this.$closePreview, this.$fullimage, this.$details );
+			this.$previewInner = $( '<div class="og-expander-inner"></div>' ).append( this.$closePreview, this.$details );
 			this.$previewEl = $( '<div class="og-expander"></div>' ).append( this.$previewInner );
 			// append preview element to the item
 			this.$item.append( this.getEl() );
@@ -387,17 +387,19 @@ var Grid = (function() {
 			// }
 
 			var eldata = {
-					largesrc : $itemEl.data( 'largesrc' ),
 					title : $itemEl.data( 'title' ),
 					description : $itemEl.next('.expand-content').html()
 				};
 
 			this.$title.html( eldata.title );
-			this.$description.html( eldata.description + '----' + eldata.description);
+			this.$description.html( eldata.description );
 
 			// TODO: Store the description somewhere that's not HTML, don't want duplicate content.
 			// this.$item.data('desciygi', eldata.description);
-
+			// console.log('item:');
+			// $itemEl.data('lalalalala', 'text this');
+			// alert($itemEl.data('lalalalala'));
+			
 			var self = this;
 			
 			// remove the current image in the preview
@@ -407,18 +409,18 @@ var Grid = (function() {
 
 			// preload large image and add it to the preview
 			// for smaller screens we don´t display the large image (the media query will hide the fullimage wrapper)
-			if( self.$fullimage.is( ':visible' ) ) {
-				this.$loading.show();
-				$( '<img/>' ).load( function() {
-					var $img = $( this );
-					if( $img.attr( 'src' ) === self.$item.children('a').data( 'largesrc' ) ) {
-						self.$loading.hide();
-						self.$fullimage.find( 'img' ).remove();
-						self.$largeImg = $img.fadeIn( 350 );
-						self.$fullimage.append( self.$largeImg );
-					}
-				} ).attr( 'src', eldata.largesrc );	
-			}
+			// if( self.$fullimage.is( ':visible' ) ) {
+			// 	this.$loading.show();
+			// 	$( '<img/>' ).load( function() {
+			// 		var $img = $( this );
+			// 		if( $img.attr( 'src' ) === self.$item.children('a').data( 'largesrc' ) ) {
+			// 			self.$loading.hide();
+			// 			self.$fullimage.find( 'img' ).remove();
+			// 			self.$largeImg = $img.fadeIn( 350 );
+			// 			self.$fullimage.append( self.$largeImg );
+			// 		}
+			// 	} ).attr( 'src', eldata.largesrc );	
+			// }
 
 		},
 		open : function() {
