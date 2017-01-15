@@ -773,9 +773,13 @@ $breeze:	#59c4c5;
 		  font-family: FontAwesome;
 		  position: absolute;
 		  right: 1.2em;
-		  top: calc(50% - 15px);
+		  top: calc(50% - 14px);
 		  font-size: 17px;
 		  font-weight: normal;
+
+		  @include breakpoint(narrow) {
+		  	top: calc(50% - 31px);
+		  }
 		}
 	}
 
