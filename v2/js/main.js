@@ -40,7 +40,7 @@
 			//grab the "back to top" link
 			$back_to_top = $('.cd-top');
 
-		//hide or show the "back to top" link
+		// Hide or show the "back to top" link
 		$(window).scroll(function(){
 			( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
 			if( $(this).scrollTop() > offset_opacity ) { 
@@ -48,7 +48,7 @@
 			}
 		});
 
-		//smooth scroll to top
+		// Smooth scroll to top
 		$back_to_top.on('click', function(event){
 			event.preventDefault();
 			$('body,html').animate({
@@ -56,6 +56,14 @@
 			 	}, scroll_top_duration
 			);
 		});
+
+		// Gallery.
+		$('a.gallery').featherlightGallery({
+	        previousIcon: '&#9664;',     /* Code that is used as previous icon */
+	        nextIcon: '&#9654;',         /* Code that is used as next icon */
+	        galleryFadeIn: 100,          /* fadeIn speed when slide is loaded */
+	        galleryFadeOut: 300          /* fadeOut speed before slide is loaded */
+	    });
 
 		// Disable animations/transitions until the page has loaded.
 			$body.addClass('is-loading');
