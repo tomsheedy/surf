@@ -782,9 +782,9 @@ $breeze:	#59c4c5;
 		  font-size: 17px;
 		  font-weight: normal;
 
-		  // @include breakpoint(narrow) {
-		  // 	top: calc(50% - 31px);
-		  // }
+		  @include breakpoint(mobile) {
+		  	top: calc(50% - 31px);
+		  }
 		}
 
 		&.featherlight-close:after {
