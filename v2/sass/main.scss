@@ -103,11 +103,16 @@ $breeze:	#59c4c5;
 	}
 
 	h2 {
-		font-size: 2.85em;
+		font-size: 2.4em;
 	}
 
 	h3 {
 		font-size: 1.25em;
+		margin-bottom: .5em;
+
+		&.heading {
+			font-size: 2em;
+		} 
 	}
 
 	h4 {
@@ -160,6 +165,7 @@ $breeze:	#59c4c5;
 
 	p {
 		text-align: justify;
+		line-height: 1.4em;
 	}
 
 	br.clear {
@@ -174,25 +180,10 @@ $breeze:	#59c4c5;
 		margin-bottom: 3em;
 		height: 6px;
 		border-top: solid 1px rgba(128, 128, 128, 0.2);
-		// border-bottom: solid 1px rgba(128, 128, 128, 0.2);
-
-		// &:before, &:after {
-		// 	content: '';
-		// 	position: absolute;
-		// 	top: -8px;
-		// 	display: block;
-		// 	width: 1px;
-		// 	height: 21px;
-		// 	background: rgba(128, 128, 128, 0.2);
-		// }
-
-		// &:before {
-		// 	left: -1px;
-		// }
-
-		// &:after {
-		// 	right: -1px;
-		// }
+		
+		#intro & {
+			margin-bottom: 2em;
+		}
 	}
 
 	.timestamp {
@@ -235,7 +226,6 @@ $breeze:	#59c4c5;
 	}
 
 	.name {
-		padding-bottom: 1em;
 		font-size: 2em;
 
 		span {
@@ -284,10 +274,10 @@ $breeze:	#59c4c5;
 
 		p {
 			display: block;
-			font-size: 1.5em;
+			font-size: 1.3em;
 			margin: 1em 0 .2em 0;
-			line-height: 1.5em;
-			text-align: inherit;
+			line-height: 1.4em;
+			text-align: left;
 		}
 	}
 
@@ -1038,8 +1028,7 @@ $breeze:	#59c4c5;
 			display: inline-block;
 			margin: 0;
 			height: 21px;
-			border-left: solid 1px rgba(192, 192, 192, 0.35);
-			border-right: solid 1px rgba(192, 192, 192, 0.35);
+
 
 			&:before, &:after {
 				content: '';
@@ -1050,7 +1039,6 @@ $breeze:	#59c4c5;
 				margin-top: -2px;
 				height: 5px;
 				border-top: solid 1px rgba(192, 192, 192, 0.35);
-				border-bottom: solid 1px rgba(192, 192, 192, 0.35);
 			}
 
 			&:before {
@@ -1084,6 +1072,25 @@ $breeze:	#59c4c5;
 					cursor: pointer;
 					text-transform: uppercase;
 
+				}
+
+				a:hover, 
+				a:focus {
+					position: relative;
+					color: darken(white, 10%);
+
+					&:after{
+						display: block;
+						content: '\f0d7';
+						font-family: 'FontAwesome';
+						color: white;
+						font-size: 20px;
+						width: 20px;
+						height: 20px;
+						position: absolute; 
+						top: 18px;
+						left: calc(50% - 10px);
+					}
 				}
 
 				> ul {
@@ -1151,6 +1158,7 @@ $breeze:	#59c4c5;
 
 		header {
 			p {
+				text-align: center;
 				margin-bottom: 0;
 			}
 		}
@@ -1484,6 +1492,10 @@ $breeze:	#59c4c5;
 
 .og-details {
 	padding: 0 40px 0 20px;
+
+	footer {
+		text-align: center;
+	}
 }
 
 .og-details h3 {
@@ -1513,6 +1525,10 @@ $breeze:	#59c4c5;
 	font-size: 16px;
 	line-height: 22px;
 	color: #483949;
+}
+
+.og-details footer p {
+	text-align: center;
 }
 
 .og-details ul {
