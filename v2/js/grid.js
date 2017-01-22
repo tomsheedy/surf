@@ -191,7 +191,7 @@ var Grid = (function() {
 		support = Modernizr.csstransitions,
 		// default settings
 		settings = {
-			minHeight : 500,
+			minHeight : 400,
 			speed : 350,
 			easing : 'ease'
 		};
@@ -341,9 +341,6 @@ var Grid = (function() {
 
 	Preview.prototype = {
 		create : function() {
-
-			console.log('-----------');
-
 			// create Preview structure:
 			this.$title = $( '<h3></h3>' );
 			this.$description = $( '<p></p>' );
@@ -381,11 +378,6 @@ var Grid = (function() {
 			// update preview´s content
 			var $itemEl = this.$item.children( 'a' );
 
-			// if($itemEl.next('.expand-content').length > 0) {
-
-			// 	this.$item.saveContent = $itemEl.next('.expand-content');
-			// }
-
 			var eldata = {
 					title : $itemEl.data( 'title' ),
 					description : $itemEl.next('.expand-content').html()
@@ -393,12 +385,6 @@ var Grid = (function() {
 
 			this.$title.html( eldata.title );
 			this.$description.html( eldata.description );
-
-			// TODO: Store the description somewhere that's not HTML, don't want duplicate content.
-			// this.$item.data('desciygi', eldata.description);
-			// console.log('item:');
-			// $itemEl.data('lalalalala', 'text this');
-			// alert($itemEl.data('lalalalala'));
 			
 			var self = this;
 			
@@ -406,21 +392,6 @@ var Grid = (function() {
 			if( typeof self.$largeImg != 'undefined' ) {
 				self.$largeImg.remove();
 			}
-
-			// preload large image and add it to the preview
-			// for smaller screens we don´t display the large image (the media query will hide the fullimage wrapper)
-			// if( self.$fullimage.is( ':visible' ) ) {
-			// 	this.$loading.show();
-			// 	$( '<img/>' ).load( function() {
-			// 		var $img = $( this );
-			// 		if( $img.attr( 'src' ) === self.$item.children('a').data( 'largesrc' ) ) {
-			// 			self.$loading.hide();
-			// 			self.$fullimage.find( 'img' ).remove();
-			// 			self.$largeImg = $img.fadeIn( 350 );
-			// 			self.$fullimage.append( self.$largeImg );
-			// 		}
-			// 	} ).attr( 'src', eldata.largesrc );	
-			// }
 
 		},
 		open : function() {
@@ -430,7 +401,7 @@ var Grid = (function() {
 				this.setHeights();
 				// scroll to position the preview in the right place
 				this.positionPreview();
-			}, this ), 25 );
+			}, this ), 250 );
 
 		},
 		close : function() {
@@ -468,10 +439,16 @@ var Grid = (function() {
 			var heightPreview = winsize.height - this.$item.data( 'height' ) - marginExpanded,
 				itemHeight = winsize.height;
 
+			// var $itemEl = this.$item.children( 'a' );
+
 			if( heightPreview < settings.minHeight ) {
 				heightPreview = settings.minHeight;
-				itemHeight = settings.minHeight + this.$item.data( 'height' ) + marginExpanded;
+				itemHeight = settings.minHeight + this.$item.data( 'cheight' ) + marginExpanded;
 			}
+
+			
+
+			// console.log($itemEl.data( 'cheight' ) + '--');
 
 			this.height = heightPreview;
 			this.itemHeight = itemHeight;
