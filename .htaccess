@@ -340,6 +340,15 @@ AddDefaultCharset utf-8
     RewriteCond %{HTTPS} !=on
     RewriteRule ^ - [env=proto:http]
 
+    
+    # MATT - Webroot is /dist/
+    # http://stackoverflow.com/questions/10364951/make-web-root-folder-a-sub-folder-with-htaccess
+    RewriteCond %{THE_REQUEST} dist/
+    RewriteRule ^dist/(.*) http://offshoresurfing.com/$1 [R=301,L]
+
+    RewriteCond %{REQUEST_URI} !dist/
+    RewriteRule ^(.*)$ /dist/$1 [L]
+
 </IfModule>
 
 # ----------------------------------------------------------------------
