@@ -91,7 +91,7 @@ gulp.task('extras', () => {
 
 
 
-gulp.task('build', ['html', 'images', 'extras'], () => {
+gulp.task('build', ['html', 'extras'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
