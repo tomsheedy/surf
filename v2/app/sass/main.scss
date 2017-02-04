@@ -537,6 +537,7 @@ $breeze:	#59c4c5;
 		font-weight: 600;
 		line-height: 1em;
 		height: 116px;
+		margin-bottom: 0;
 
 		@include breakpoint(mobile) {
 			margin-bottom: 0;
@@ -1036,6 +1037,7 @@ $breeze:	#59c4c5;
 		z-index: 10;
 		overflow: hidden;
 
+
 		> ul {
 			line-height: 0px;
 			position: relative;
@@ -1113,6 +1115,11 @@ $breeze:	#59c4c5;
 			}
 		}
 	}
+
+
+		.is-sticky #nav {
+			background-color: #5b5b5b;
+		}
 
 	.dropotron {
 		background: rgba(255, 255, 255, 0.975);

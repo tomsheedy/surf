@@ -13,7 +13,7 @@ const $ = gulpLoadPlugins();
 
 // Compile sass to compressed css and add vendor prefixes
 gulp.task('styles', function() {
-  gulp.src('./sass/main.scss')
+  gulp.src('app/sass/main.scss')
     .pipe(sass())
     .on('error', function(error) {
       console.log('\n ✖ ✖ ✖ ✖ ✖ ERROR ✖ ✖ ✖ ✖ ✖ \n \n' + error.message + '\n \n');
@@ -22,7 +22,7 @@ gulp.task('styles', function() {
       browsers: ['> 1%', 'last 2 versions', 'Firefox >= 20']
     }))
     .pipe(nano())
-    .pipe(gulp.dest('./css'))
+    .pipe(gulp.dest('./app/css'))
     .pipe(browserSync.stream());
 });
 
@@ -38,11 +38,11 @@ gulp.task('scripts', function() {
     .pipe(browserSync.stream());
 });
 
-// CSS analysis tool
-gulp.task('parker', function() {
-  return gulp.src('./css/main.css')
-    .pipe(parker());
-});
+// // CSS analysis tool
+// gulp.task('parker', function() {
+//   return gulp.src('./css/main.css')
+//     .pipe(parker());
+// });
 
 // Static server + watching scss, js, html files
 gulp.task('serve', ['styles', 'scripts'], function() {

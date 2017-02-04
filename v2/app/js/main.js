@@ -65,6 +65,10 @@
 	        galleryFadeOut: 300          /* fadeOut speed before slide is loaded */
 	    });
 
+	    // Sticky Nav.
+	    // $('#nav').sticky({topSpacing:0});
+
+
 		// Disable animations/transitions until the page has loaded.
 			$body.addClass('is-loading');
 
