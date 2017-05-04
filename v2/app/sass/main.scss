@@ -1390,6 +1390,32 @@ $breeze:	#59c4c5;
 		}
 	}
 
+.ta-wrap {
+	text-align: center;
+	margin-top: 2em;
+	margin-bottom: 2em;
+
+	.cdsROW.wide {
+		width: auto !important;
+	}
+}
+
+.ta-wrap2 {
+	text-align: center;
+	margin-top: 0em;
+	margin-bottom: 2em;
+
+	.cdsROW.wide {
+		width: auto !important;
+	}
+}
+
+#CDSROWLOC986,
+#CDSROWLOC695 {
+	max-width: 100% !important;
+}
+
+
 /* Grid */
 
 .no-float {
