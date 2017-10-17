@@ -339,10 +339,6 @@ AddDefaultCharset utf-8
     RewriteRule ^ - [env=proto:https]
     RewriteCond %{HTTPS} !=on
     RewriteRule ^ - [env=proto:http]
-
-    RewriteCond %{HTTP_HOST} ^offshoresurfing\.com$ [NC]
-    RewriteRule ^(.*)$ https://offshoresurfmorocco.com [R=301,L]
-
     
     # MATT - Webroot is /dist/
     # http://stackoverflow.com/questions/10364951/make-web-root-folder-a-sub-folder-with-htaccess
@@ -389,12 +385,12 @@ AddDefaultCharset utf-8
 
 # Option 1: rewrite www.example.com → example.com
 
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteCond %{HTTPS} !=on
-    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-    RewriteRule ^ %{ENV:PROTO}://%1%{REQUEST_URI} [R=301,L]
-</IfModule>
+#<IfModule mod_rewrite.c>
+#    RewriteEngine On
+#    RewriteCond %{HTTPS} !=on
+#    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+#    RewriteRule ^ %{ENV:PROTO}://%1%{REQUEST_URI} [R=301,L]
+#</IfModule>
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -411,6 +407,14 @@ AddDefaultCharset utf-8
 #     RewriteCond %{SERVER_ADDR} !=::1
 #     RewriteRule ^ %{ENV:PROTO}://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 # </IfModule>
+
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_HOST} ^offshoresurfing.com$ [OR]
+  RewriteCond %{HTTP_HOST} ^www.offshoresurfing.com$
+  RewriteRule (.*)$ http://www.offshoresurfmorocco.com [R=301,L]
+</IfModule>
 
 
 # ######################################################################
