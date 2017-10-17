@@ -413,7 +413,7 @@ AddDefaultCharset utf-8
   RewriteEngine On
   RewriteCond %{HTTP_HOST} ^offshoresurfing.com$ [OR]
   RewriteCond %{HTTP_HOST} ^www.offshoresurfing.com$
-  RewriteRule (.*)$ http://www.offshoresurfmorocco.com [R=301,L]
+  RewriteRule (.*)$ https://www.offshoresurfmorocco.com [R=301,L]
 </IfModule>
 
 
