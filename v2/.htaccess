@@ -378,6 +378,13 @@ AddDefaultCharset utf-8
 # Option 1: rewrite www.example.com → example.com
 
 <IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_HOST} !^offshoresurfmorocco.com$ [OR]
+  RewriteCond %{HTTP_HOST} !^www.offshoresurfmorocco.com$
+  RewriteRule (.*)$ https://www.offshoresurfmorocco.com [R=301,L]
+</IfModule>
+
+<IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteCond %{HTTPS} !=on
     RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]

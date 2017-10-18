@@ -409,6 +409,15 @@ AddDefaultCharset utf-8
 # </IfModule>
 
 
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_HOST} !^offshoresurfmorocco.com$ [OR]
+  RewriteCond %{HTTP_HOST} !^www.offshoresurfmorocco.com$
+  RewriteRule (.*)$ https://www.offshoresurfmorocco.com [R=301,L]
+</IfModule>
+
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteCond %{HTTP_HOST} ^offshoresurfing.com$ [OR]
